@@ -1,4 +1,4 @@
-import isString from '../../helpers/is-string.js'
+import isString from '../helpers/is-string.js'
 /**
  * Convert a string to snake case
  * @param {string} string string to convert
