@@ -8,7 +8,7 @@ import isString from '../helpers/is-string.js'
 const pascalCase = (string) => {
   if (isString(string)) {
     const stringToArray = string.split(' ')
-    const stringToUpperCase = stringToArray.map(string => string.charAt(0).toUpperCase() + string.slice(1))
+    const stringToUpperCase = stringToArray.map(string => string.charAt(0).toUpperCase() + string.slice(1).toLowerCase())
     const stringToUpperCaseJoined = stringToUpperCase.join('')
     return stringToUpperCaseJoined
   } else {

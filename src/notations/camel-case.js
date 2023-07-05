@@ -8,7 +8,7 @@ import isString from '../helpers/is-string.js'
 const camelCase = (string) => {
   if (isString(string)) {
     const stringToArray = string.split(' ')
-    const stringToUpperCase = stringToArray.map(string => string.charAt(0).toUpperCase() + string.slice(1))
+    const stringToUpperCase = stringToArray.map(string => string.charAt(0).toUpperCase() + string.slice(1).toLowerCase())
     const stringToUpperCaseJoined = stringToUpperCase.join('')
     const stringFirstLetterLowerCase = stringToUpperCaseJoined.charAt(0).toLowerCase() + stringToUpperCaseJoined.slice(1)
     return stringFirstLetterLowerCase
