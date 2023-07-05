@@ -1,4 +1,3 @@
-
 import camelCase from './notations/camel-case.js'
 import kebabCase from './notations/kebab-case.js'
 import pascalCase from './notations/pascal-case.js'
@@ -20,7 +19,7 @@ const convertTo = {
    * @example "Some long string" => "some-long-string"
    */
   kebabCase: (string) => kebabCase(string),
-  
+
   /**
    * Convert a string to pascal case
    * @param {string} string string to convert
@@ -28,14 +27,14 @@ const convertTo = {
    * @example "Some long string" => "SomeLongString"
    */
   pascalCase: (string) => pascalCase(string),
-  
+
   /**
    * Convert a string to camel case
    * @param {string} string string to convert
    * @returns converted string
    * @example "Some long string" => "someLongString"
    */
-  camelCase: (string) => camelCase(string),
+  camelCase: (string) => camelCase(string)
 }
 
-export default  convertTo
+export default convertTo

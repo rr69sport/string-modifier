@@ -25,3 +25,7 @@ const kebabText = convertTo.kebabCase(textToConvert) // => some-long-text-to-con
 
 const snakeText = convertTo.snakeCase(textToConvert) // => some_long_text_to_convert
 ```
+
+## Special Thanks
+
+Special thanks to [lombervid](https://github.com/lombervid) who provided ideas for functionality that could be added to the project
