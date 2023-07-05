@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/rr69sport/string-modifier/issues"
   },
-  "homepage": "https://github.com/rr69sport/string-modifier#readme"
+  "homepage": "https://github.com/rr69sport/string-modifier#readme",
+  "devDependencies": {
+    "vitest": "0.32.4"
+  }
 }
