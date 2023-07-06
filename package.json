@@ -1,6 +1,6 @@
 {
   "name": "string-modifier",
-  "version": "0.0.3",
+  "version": "0.0.4-beta",
   "description": "Convert text strings to different notations",
   "main": "src/index.js",
   "scripts": {
