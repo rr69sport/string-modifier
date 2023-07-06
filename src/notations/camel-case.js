@@ -1,4 +1,5 @@
 import isString from '../helpers/is-string.js'
+import { normaliceCharacters, removeSymbols } from '../helpers/special-chars.js'
 /**
  * Convert a string to camel case
  * @param {string} string string to convert
@@ -7,10 +8,13 @@ import isString from '../helpers/is-string.js'
  */
 const camelCase = (string) => {
   if (isString(string)) {
-    const stringToArray = string.split(' ')
+    const normalizedString = normaliceCharacters(string)
+    const removedSymbols = removeSymbols(normalizedString)
+    const stringToArray = removedSymbols.split(' ')
     const stringToUpperCase = stringToArray.map(string => string.charAt(0).toUpperCase() + string.slice(1).toLowerCase())
     const stringToUpperCaseJoined = stringToUpperCase.join('')
     const stringFirstLetterLowerCase = stringToUpperCaseJoined.charAt(0).toLowerCase() + stringToUpperCaseJoined.slice(1)
+
     return stringFirstLetterLowerCase
   } else {
     throw TypeError(`The argument "${string}" must be a string.`)

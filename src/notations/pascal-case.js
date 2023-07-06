@@ -1,4 +1,5 @@
 import isString from '../helpers/is-string.js'
+import { normaliceCharacters, removeSymbols } from '../helpers/special-chars.js'
 /**
  * Convert a string to pascal case
  * @param {string} string string to convert
@@ -7,7 +8,9 @@ import isString from '../helpers/is-string.js'
  */
 const pascalCase = (string) => {
   if (isString(string)) {
-    const stringToArray = string.split(' ')
+    const normalizedString = normaliceCharacters(string)
+    const removedSymbols = removeSymbols(normalizedString)
+    const stringToArray = removedSymbols.split(' ')
     const stringToUpperCase = stringToArray.map(string => string.charAt(0).toUpperCase() + string.slice(1).toLowerCase())
     const stringToUpperCaseJoined = stringToUpperCase.join('')
     return stringToUpperCaseJoined
