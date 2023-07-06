@@ -1,27 +1,22 @@
 import { describe, expect, it } from 'vitest'
 import convertTo from '../src/index.js'
 
-const textToConvert = 'Some loNg text to convert'
-
-const camelText = convertTo.camelCase(textToConvert)
-const pascalText = convertTo.pascalCase(textToConvert)
-const kebabText = convertTo.kebabCase(textToConvert)
-const snakeText = convertTo.snakeCase(textToConvert)
+const { camelCase, pascalCase, kebabCase, snakeCase } = convertTo
 
 describe('String convert', () => {
   it('to camelCase', () => {
-    expect(camelText).toBe('someLongTextToConvert')
+    expect(camelCase('Some long string@ to convert')).toBe('someLongStringToConvert')
   })
 
   it('to pascalCase', () => {
-    expect(pascalText).toBe('SomeLongTextToConvert')
+    expect(pascalCase('Some lÓng#string to_@convért')).toBe('SomeLongStringToConvert')
   })
 
   it('to kebabCase', () => {
-    expect(kebabText).toBe('some-long-text-to-convert')
+    expect(kebabCase('Some long strÍng tó convert')).toBe('some-long-string-to-convert')
   })
 
   it('to snakeCase', () => {
-    expect(snakeText).toBe('some_long_text_to_convert')
+    expect(snakeCase('Some lóng__--string to cÓnvert')).toBe('some_long_string_to_convert')
   })
 })

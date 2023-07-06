@@ -1,4 +1,5 @@
 import isString from '../helpers/is-string.js'
+import { normaliceCharacters, removeSymbols } from '../helpers/special-chars.js'
 /**
  * Convert a string to kebab case
  * @param {string} string string to convert
@@ -7,7 +8,9 @@ import isString from '../helpers/is-string.js'
  */
 const kebabCase = (string) => {
   if (isString(string)) {
-    const stringModified = string.replace(/ /g, '-')
+    const normalizedString = normaliceCharacters(string)
+    const removedSymbols = removeSymbols(normalizedString)
+    const stringModified = removedSymbols.replace(/ /g, '-')
     return stringModified.toLowerCase()
   } else {
     throw TypeError(`The argument "${string}" must be a string.`)
