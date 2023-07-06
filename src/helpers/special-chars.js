@@ -8,7 +8,7 @@ import isString from './is-string.js'
  */
 export const normaliceCharacters = (string) => {
   if (isString(string)) {
-    return string.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    return string.normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim()
   } else {
     throw TypeError(`The argument "${string}" must be a string.`)
   }
@@ -22,7 +22,7 @@ export const normaliceCharacters = (string) => {
  */
 export const removeSymbols = (string) => {
   if (isString(string)) {
-    return string.replace(/[^a-zA-Z0-9 ]/g, ' ').replace(/\s+/g, ' ')
+    return string.replace(/[^a-zA-Z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim()
   } else {
     throw TypeError(`The argument "${string}" must be a string.`)
   }
